@@ -1,4 +1,4 @@
-package br.com.digitalhouse.componentesmaterialdesign;
+package br.com.digitalhouse.componentesmaterialdesign.home;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -8,15 +8,34 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
+
+import br.com.digitalhouse.componentesmaterialdesign.R;
 
 public class MainActivity extends AppCompatActivity {
+
+    private TextView textViewTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        textViewTitle = findViewById(R.id.textViewTitle);
+
+        if (getIntent() != null && getIntent().getExtras() != null){
+
+            Bundle bundle = getIntent().getExtras();
+
+            if (bundle.getString("NAME") != null){
+                textViewTitle.setText( bundle.getString("NAME") );
+            }
+        }
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/default_margin_16dp"
-    tools:context=".LoginActivity">
+    tools:context=".login.LoginActivity">
 
 
     <LinearLayout
@@ -60,7 +60,7 @@
 
         <Button
             android:id="@+id/btnLogin"
-            style="@style/Base.Widget.AppCompat.Button.Colored"
+            style="@style/Buttomtheme"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="48dp"
